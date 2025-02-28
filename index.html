@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Feedback Survey</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="survey-container" id="survey-form">
+        <h1>Student Feedback Survey</h1>
+        <p>Help us enhance your learning experience!</p>
+        <form id="feedbackForm">
+            <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" placeholder="Enter your full name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="course">Select Course</label>
+                <select id="course" required>
+                    <option value="" disabled selected>Choose a course</option>
+                    <option value="cs101">CS101: Introduction to Programming</option>
+                    <option value="math201">MATH201: Calculus II</option>
+                    <option value="eng105">ENG105: Creative Writing</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>How satisfied are you with the course?</label>
+                <div class="rating-group">
+                    <div class="rating-option">
+                        <input type="radio" id="poor" name="rating" value="Poor" required>
+                        <label id="poor-label" for="poor">Poor</label>
+                    </div>
+                    <div class="rating-option">
+                        <input type="radio" id="average" name="rating" value="Average">
+                        <label id="average-label" for="average">Average</label>
+                    </div>
+                    <div class="rating-option">
+                        <input type="radio" id="good" name="rating" value="Good">
+                        <label id="good-label" for="good">Good</label>
+                    </div>
+                    <div class="rating-option">
+                        <input type="radio" id="very-good" name="rating" value="Very Good">
+                        <label id="very-good-label" for="very-good">Very Good</label>
+                    </div>
+                    <div class="rating-option">
+                        <input type="radio" id="excellent" name="rating" value="Excellent">
+                        <label id="excellent-label" for="excellent">Excellent</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="suggestions">Any Suggestions?</label>
+                <textarea id="suggestions" placeholder="Share your suggestions..." rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="teacher">Who was your instructor?</label>
+                <input type="text" id="teacher" placeholder="Enter instructor's name">
+            </div>
+            <button type="submit">Submit Feedback</button>
+        </form>
+    </div>
+    <div class="survey-container hidden" id="thank-you">
+        <h1>Thank You!</h1>
+        <p>Your response has been submitted successfully.</p>
+        <button onclick="restartForm()">Submit Another Response</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
